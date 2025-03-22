@@ -4,7 +4,10 @@ return {
 
   -- mason.nvim
   {
-    "williamboman/mason.nvim"
+    "williamboman/mason.nvim",
+    opts = function()
+      require("plugins.configs.lsp-config")
+    end
   },
 }
 
