@@ -18,18 +18,15 @@ require('cokeline').setup({
 
   components = {
     {
-      text = ' ',-- '｜',
+      text = '  ',-- '｜',
       fg = function(buffer)
         return
           buffer.is_modified and yellow or green
       end
     },
     {
-      text = function(buffer) return buffer.devicon.icon .. ' ' end,
+      text = function(buffer) return buffer.devicon.icon end,
       fg = function(buffer) return buffer.devicon.color end,
-    },
-    {
-      text = function(buffer) return buffer.index .. ': ' end,
     },
     {
       text = function(buffer) return buffer.unique_prefix end,
@@ -37,7 +34,7 @@ require('cokeline').setup({
       italic = true,
     },
     {
-      text = function(buffer) return buffer.filename .. ' ' end,
+      text = function(buffer) return buffer.filename end,
       bold = function(buffer) return buffer.is_focused end,
     },
     {
