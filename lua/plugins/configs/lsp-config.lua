@@ -41,6 +41,9 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opts)
 end
 
+-- blink
+local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 -- lsp 配置
 --  --> lua
 nvlsp.lua_ls.setup({
@@ -66,4 +69,5 @@ nvlsp.lua_ls.setup({
     return true
   end,
   on_attach = on_attach,
+  capabilities = capabilities,
 })
