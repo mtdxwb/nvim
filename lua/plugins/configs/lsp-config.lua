@@ -66,6 +66,7 @@ end
 -- lsp 配置
 --  --> lua
 nvlsp.lua_ls.setup({
+  on_attach = on_attach,
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if not vim.loop.fs_stat(path .. "~/.config/nvim/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc") then
@@ -87,6 +88,5 @@ nvlsp.lua_ls.setup({
     end
     return true
   end,
-  on_attach = on_attach,
   capabilities = capabilities,
 })
