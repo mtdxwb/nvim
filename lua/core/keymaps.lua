@@ -11,6 +11,10 @@ local nmappings = {
   { from = "<leader>nh",  to = ":nohl<CR>" }, -- 取消高亮
 
   -- 移动
+  { from = "<C-h>",       to = "<C-w>h" },
+  { from = "<C-j>",       to = "<C-w>j" },
+  { from = "<C-k>",       to = "<C-w>k" },
+  { from = "<C-l>",       to = "<C-w>l" },
   { from = "J",           to = "5j",                    mode = mode_nv },
   { from = "K",           to = "5k",                    mode = mode_nv },
 
