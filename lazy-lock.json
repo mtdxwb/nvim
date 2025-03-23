@@ -18,5 +18,6 @@
   "resession.nvim": { "branch": "master", "commit": "cc1cc9a4ed7e6f72057c265ba5cc711ec16c2cff" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
+  "vim-illuminate": { "branch": "master", "commit": "19cb21f513fc2b02f0c66be70107741e837516a1" },
   "yazi.nvim": { "branch": "main", "commit": "88f5a8420aed3cd7dd5ec1be117cdddcb5f14448" }
 }
