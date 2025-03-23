@@ -16,8 +16,8 @@ mason.setup({
   ui = {
     icons = {
       package_installed = "✓",
-        package_pending = "➜",
-        package_uninstalled = "✗"
+      package_pending = "➜",
+      package_uninstalled = "✗"
     }
   }
 })
@@ -30,15 +30,21 @@ local on_attach = function(client, bufnr)
 
   -- set keybinds
   -- rename
-  keymap.set("n", "<leader>r", ":lua vim.lsp.buf.rename<CR>", opts)
-  -- code action
-  keymap.set("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opts)
+  keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>", opts)
   -- go to definition
-  keymap.set("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+  keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
   -- show hover
-  keymap.set("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opts)
+  keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
   -- format
   keymap.set("n", "<leader>=", ":lua vim.lsp.buf.format { async = true }<CR>", opts)
+
+  -- 以浮窗形式显示错误
+  keymap.set("n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  keymap.set("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+  keymap.set("n", "<leader>cd", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
+  keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+  keymap.set("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
 end
 
 -- blink

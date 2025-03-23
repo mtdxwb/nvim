@@ -2,7 +2,7 @@ return {
   -- lspconfig
   {
     "neovim/nvim-lspconfig",
-    dependencies = { 'saghen/blink.cmp' },
+    dependencies = { 'saghen/blink.cmp', 'nvimdev/lspsaga.nvim', 'williamboman/mason.nvim' },
 
     -- example using `opts` for defining servers
     opts = {
@@ -20,6 +20,19 @@ return {
         lspconfig[server].setup(config)
       end
     end
+  },
+
+  -- lspsaga
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'LspAttach',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
+    }
   },
 
   -- mason.nvim
