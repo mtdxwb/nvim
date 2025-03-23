@@ -57,13 +57,13 @@ return {
         preset = 'none',
         ['<C-o>'] = { 'show', 'show_documentation', 'hide_documentation' },
         ['<C-e>'] = { 'hide', 'fallback' },
-        ['<CR>'] = { 'accept', 'fallback' },
+        ['<CR>']  = { 'accept', 'fallback' },
 
         ['<C-n>'] = { 'snippet_forward', 'fallback' },
         ['<C-p>'] = { 'snippet_backward', 'fallback' },
 
         ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
-        ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
+        ['<Tab>']   = { 'select_next', 'snippet_forward', 'fallback' },
 
         ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
         ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
@@ -72,16 +72,9 @@ return {
       },
 
       completion = {
-        keyword = {
-          range = 'full',     -- 在一个单词中间时，自动检测整个单词
-        },
-
-        list = {
-          selection = { preselect = false, auto_insert = false },
-        },
-
+        keyword = { range = 'full' },   -- 在一个单词中间时，自动检测整个单词
+        list = { selection = { preselect = false, auto_insert = false }, },
         menu = { border = 'single' },
-
         documentation = {
           auto_show = true,
           auto_show_delay_ms = 500,
