@@ -18,7 +18,7 @@ require('cokeline').setup({
 
   components = {
     {
-      text = '  ',-- '｜',
+      text = ' ',-- '｜',
       fg = function(buffer)
         return
           buffer.is_modified and yellow or green
