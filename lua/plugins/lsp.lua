@@ -8,8 +8,23 @@ return {
 		-- example using `opts` for defining servers
 		opts = {
 			servers = {
-				lua_ls = {},
-				clangd = { cmd = { "clangd" } },
+				lua_ls = {
+					Lua = {
+						runtime = {
+							version = "LuaJIT",
+						},
+						workspace = {
+							checkThirdParty = false,
+							library = {
+								vim.env.VIMRUNTIME,
+							},
+						},
+					},
+				},
+
+				-- c/c++
+				cmake = {},
+				clangd = { capabilities = { offsetEncoding = "utf-8" }, cmd = { "clangd" } },
 			},
 		},
 

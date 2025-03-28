@@ -9,6 +9,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
+		cpp = { "clang-format" },
+		cmake = { "cmake-format" },
 	},
 
 	-- 保存时自动格式化
