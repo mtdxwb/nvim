@@ -26,9 +26,6 @@ return {
 	-- mason.nvim
 	{
 		"williamboman/mason.nvim",
-		opts = function()
-			require("plugins.configs.lspconfig")
-		end,
 	},
 
 	-- blink.cmp

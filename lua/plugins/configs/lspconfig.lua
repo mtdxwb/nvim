@@ -33,9 +33,6 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "<leader>r", "<cmd>lsp vim.lsp.buf.rename<CR>", opts)
 	-- go to definition
 	keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	-- format
-	keymap.set("n", "<leader>=", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
-
 	-- 以浮窗形式显示错误
 	keymap.set("n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
