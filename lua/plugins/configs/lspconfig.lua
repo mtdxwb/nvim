@@ -14,6 +14,7 @@ end
 -- mason config
 mason.setup({
 	ui = {
+		border = "single",
 		icons = {
 			package_installed = "✓",
 			package_pending = "➜",
@@ -69,5 +70,11 @@ nvlsp.lua_ls.setup({
 		end
 		return true
 	end,
+	capabilities = capabilities,
+})
+
+--  --> c/c++(clang)
+nvlsp.clangd.setup({
+	on_attach = on_attach,
 	capabilities = capabilities,
 })
