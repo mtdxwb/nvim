@@ -33,6 +33,17 @@ vim.diagnostic.config({
 	},
 })
 
+-- 禁用所有 LSP 客户端的原生签名帮助
+vim.api.nvim_create_autocmd("LspAttach", {
+	desc = "Disable native signature help",
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client then
+			client.server_capabilities.signatureHelpProvider = false
+		end
+	end,
+})
+
 -- 快捷键
 local keymap = vim.keymap
 
@@ -55,7 +66,6 @@ local on_attach = function(client, bufnr)
 
 	-- 悬停文档
 	keymap.set("n", "<leader>h", "<cmd>Lspsaga hover_doc<CR>", opts)
-
 	-- 关闭悬浮窗口
 	keymap.set("n", "<Esc>", "<cmd>Lspsaga hover_close<CR>", opts)
 end
@@ -66,18 +76,18 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 -- lsp 配置
 --  --> lua
 nvlsp.lua_ls.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 --  --> c/c++(clang)
 nvlsp.clangd.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
+	on_attach = on_attach,
 })
 
 --  --> cmake
 nvlsp.cmake.setup({
-	on_attach = on_attach,
 	capabilities = capabilities,
+	on_attach = on_attach,
 })

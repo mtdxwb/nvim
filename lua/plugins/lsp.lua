@@ -43,11 +43,13 @@ return {
 	-- lsp-saga
 	{
 		"nvimdev/lspsaga.nvim",
+		lazy = false,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
+			-- lsp sgaga config
 			require("lspsaga").setup({
 				ui = {
 					title = true,
@@ -60,7 +62,7 @@ return {
 					enable = true, -- 在窗口栏显示当前符号路径
 				},
 				lightbulb = {
-					enable = true, -- 显示代码操作提示图标
+					enable = false, -- 显示代码操作提示图标
 				},
 				hover = {
 					max_width = 0.8,
@@ -69,17 +71,6 @@ return {
 					show_arrow = true,
 					auto_close = true,
 					mouse = true,
-				},
-				signature = {
-					enable = true,
-					auto_trigger = true,
-					trigger_keys = { "(", ",", "<" },
-					max_height = 0.8,
-					max_width = 0.6,
-					border = "rounded",
-					show_label = true,
-					hi_parameter = "LspSagaSignatureHelpBorder",
-					check_client_handlers = true,
 				},
 			})
 		end,
