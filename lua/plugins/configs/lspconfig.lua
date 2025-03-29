@@ -54,7 +54,7 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "gn", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
 	-- 悬停文档
-	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+	keymap.set("n", "<leader>h", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 	-- 关闭悬浮窗口
 	keymap.set("n", "<Esc>", "<cmd>Lspsaga hover_close<CR>", opts)
