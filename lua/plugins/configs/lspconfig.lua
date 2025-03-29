@@ -14,12 +14,22 @@ end
 -- mason config
 mason.setup({
 	ui = {
-		border = "single",
+		border = "rounded",
 		icons = {
 			package_installed = "✓",
 			package_pending = "➜",
 			package_uninstalled = "✗",
 		},
+	},
+})
+
+-- 错误信息显示边框
+vim.diagnostic.config({
+	float = {
+		border = "rounded", -- 可选样式：none/single/double/rounded/solid/shadow
+		format = function(diagnostic)
+			return string.format("%s (%s)", diagnostic.message, diagnostic.source)
+		end,
 	},
 })
 
