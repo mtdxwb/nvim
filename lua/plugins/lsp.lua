@@ -40,9 +40,49 @@ return {
 		end,
 	},
 
-	-- mason.nvim
+	-- lsp-saga
 	{
-		"williamboman/mason.nvim",
+		"nvimdev/lspsaga.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("lspsaga").setup({
+				ui = {
+					title = true,
+					border = "rounded", -- 窗口边框样式
+					colors = {
+						normal_bg = "#1d1536",
+					},
+				},
+				symbol_in_winbar = {
+					enable = true, -- 在窗口栏显示当前符号路径
+				},
+				lightbulb = {
+					enable = true, -- 显示代码操作提示图标
+				},
+				hover = {
+					max_width = 0.8,
+					max_height = 0.9,
+					border = "rounded",
+					show_arrow = true,
+					auto_close = true,
+					mouse = true,
+				},
+				signature = {
+					enable = true,
+					auto_trigger = true,
+					trigger_keys = { "(", ",", "<" },
+					max_height = 0.8,
+					max_width = 0.6,
+					border = "rounded",
+					show_label = true,
+					hi_parameter = "LspSagaSignatureHelpBorder",
+					check_client_handlers = true,
+				},
+			})
+		end,
 	},
 
 	-- blink.cmp

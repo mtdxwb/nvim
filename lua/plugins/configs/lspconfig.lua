@@ -41,13 +41,23 @@ local on_attach = function(client, bufnr)
 
 	-- set keybinds
 	-- rename
-	keymap.set("n", "<leader>r", "<cmd>lsp vim.lsp.buf.rename<CR>", opts)
+	keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<CR>", opts)
+
 	-- go to definition
-	keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap.set("n", "gd", "<cmd>Lspsaga finder def+ref<CR>", opts)
+
+	-- 代码操作
+	keymap.set({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+
 	-- 以浮窗形式显示错误
-	keymap.set("n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	keymap.set("n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	keymap.set("n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+	keymap.set("n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+	keymap.set("n", "gn", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+
+	-- 悬停文档
+	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+
+	-- 关闭悬浮窗口
+	keymap.set("n", "<Esc>", "<cmd>Lspsaga hover_close<CR>", opts)
 end
 
 -- blink
