@@ -1,3 +1,6 @@
+-- custom term
+require("plugins.configs.custom_term")
+
 -- 主键
 vim.g.mapleader = " "
 
@@ -32,6 +35,10 @@ local nmappings = {
 	{ from = "<leader>fg", to = builtin.live_grep, opts = { desc = "Telescope live grep" } },
 	{ from = "<leader>fb", to = builtin.buffers, opts = { desc = "Telescope buffers" } },
 	{ from = "<leader>fh", to = builtin.help_tags, opts = { desc = "Telescope help tags" } },
+
+	-- custom term
+	{ from = "<leader>g", to = "<cmd>lua _lazygit_toggle()<CR>", opts = { noremap = true, silent = true } },
+	{ from = "<leader>t", to = "<cmd>lua _floating_term()<CR>", opts = { noremap = true, silent = true } },
 }
 
 for _, mapping in ipairs(nmappings) do

@@ -169,4 +169,12 @@ return {
 			})
 		end,
 	},
+
+	-- toggleterm.nvim
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		opts = {--[[ things you want to change go here]]
+		},
+	},
 }
