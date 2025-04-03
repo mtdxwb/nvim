@@ -56,7 +56,7 @@ local nmappings = {
 
 	-- custom term
 	{ from = "<leader>g", to = "<cmd>lua _lazygit_toggle()<CR>", opts = { noremap = true, silent = true } },
-	{ from = "<leader>t", to = "<cmd>lua _floating_term()<CR>", opts = { noremap = true, silent = true } },
+	{ from = "<leader>m", to = "<cmd>lua _floating_term()<CR>", opts = { noremap = true, silent = true } },
 }
 
 for _, mapping in ipairs(nmappings) do

@@ -158,6 +158,6 @@ return {
 		},
 	},
 
-	-- auto-pairs
-	{ "jiangmiao/auto-pairs", event = "VeryLazy" },
+	-- nvim-auto-pairs
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 }
