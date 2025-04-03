@@ -9,19 +9,7 @@ return {
 		opts = {
 			servers = {
 				-- lua
-				lua_ls = {
-					Lua = {
-						runtime = {
-							version = "LuaJIT",
-						},
-						workspace = {
-							checkThirdParty = false,
-							library = {
-								vim.env.VIMRUNTIME,
-							},
-						},
-					},
-				},
+				lua_ls = {},
 
 				-- c/c++
 				cmake = {},
