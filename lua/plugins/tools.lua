@@ -157,4 +157,7 @@ return {
 		opts = {--[[ things you want to change go here]]
 		},
 	},
+
+	-- auto-pairs
+	{ "jiangmiao/auto-pairs", event = "VeryLazy" },
 }
