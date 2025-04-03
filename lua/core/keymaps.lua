@@ -31,9 +31,27 @@ local nmappings = {
 	{ from = "mk", to = ":m '<-2<CR>gv=gv", mode = mode_v },
 
 	-- telescope
-	{ from = "<leader>ff", to = builtin.find_files, opts = { desc = "Telescope find files" } },
-	{ from = "<leader>fg", to = builtin.live_grep, opts = { desc = "Telescope live grep" } },
-	{ from = "<leader>fb", to = builtin.buffers, opts = { desc = "Telescope buffers" } },
+	{
+		from = "<leader>ff",
+		to = function()
+			builtin.find_files({ use_fzf = true })
+		end,
+		opts = { desc = "Telescope find files" },
+	},
+	{
+		from = "<leader>fg",
+		to = function()
+			builtin.live_grep({ use_fzf = true })
+		end,
+		opts = { desc = "Telescope live grep" },
+	},
+	{
+		from = "<leader>fb",
+		to = function()
+			builtin.buffers({ use_fzf = true })
+		end,
+		opts = { desc = "Telescope buffers" },
+	},
 	{ from = "<leader>fh", to = builtin.help_tags, opts = { desc = "Telescope help tags" } },
 
 	-- custom term
