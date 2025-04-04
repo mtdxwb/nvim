@@ -16,9 +16,10 @@ require("cokeline").setup({
 	components = {
 		{
 			text = " ", -- '｜',
-			fg = function(buffer)
-				return buffer.is_modified and yellow or green
-			end,
+			-- fg = function(buffer)
+			-- 	return buffer.is_modified and yellow or green
+			-- end,
+			fg = get_hex("Normal", "fg"),
 		},
 		{
 			text = function(buffer)
