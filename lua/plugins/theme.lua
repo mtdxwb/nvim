@@ -50,6 +50,8 @@ return {
 					scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
 					colored_indent_levels = false,
 				},
+
+				illuminate = { enabled = false },
 			},
 		})
 		vim.cmd.colorscheme("catppuccin")
