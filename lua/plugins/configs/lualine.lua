@@ -84,7 +84,7 @@ ins_left({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue }, -- Sets highlighting of component
+	color = { fg = colors.cyan }, -- Sets highlighting of component
 	padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
@@ -123,6 +123,12 @@ ins_left({
 })
 
 ins_left({
+	function()
+		return ""
+	end,
+})
+
+ins_left({
 	-- filesize component
 	"filesize",
 	cond = conditions.buffer_not_empty,
@@ -130,26 +136,14 @@ ins_left({
 
 ins_left({
 	"filename",
+	icon = "",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
 
 ins_left({
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
-	diagnostics_color = {
-		error = { fg = colors.red },
-		warn = { fg = colors.yellow },
-		info = { fg = colors.cyan },
-	},
-})
-
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left({
 	function()
-		return "%="
+		return ""
 	end,
 })
 
@@ -174,10 +168,42 @@ ins_left({
 	color = { fg = "#ffffff", gui = "bold" },
 })
 
+ins_left({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		error = { fg = colors.red },
+		warn = { fg = colors.yellow },
+		info = { fg = colors.cyan },
+	},
+})
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+ins_left({
+	function()
+		return "%="
+	end,
+})
+
+ins_left({
+	function()
+		return "Hello, 🐢 mtdxwb!!!"
+	end,
+	color = { fg = colors.green, gui = "bold" },
+})
+
 -- Add components to right sections
 ins_right({ "location" })
 
 ins_right({ "progress", color = { fg = colors.fg, gui = "bold" } })
+
+ins_right({
+	function()
+		return ""
+	end,
+})
 
 ins_right({
 	"o:encoding", -- option component same as &encoding in viml
@@ -191,6 +217,12 @@ ins_right({
 	fmt = string.upper,
 	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
 	color = { fg = colors.green, gui = "bold" },
+})
+
+ins_right({
+	function()
+		return ""
+	end,
 })
 
 ins_right({
@@ -215,7 +247,7 @@ ins_right({
 	function()
 		return "▊"
 	end,
-	color = { fg = colors.blue },
+	color = { fg = colors.cyan },
 	padding = { left = 1 },
 })
 
