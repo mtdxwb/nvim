@@ -99,3 +99,9 @@ nvlsp.cmake.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+
+--  --> bash
+nvlsp.bashls.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})

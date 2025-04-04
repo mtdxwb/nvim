@@ -14,6 +14,9 @@ return {
 				-- c/c++
 				cmake = {},
 				clangd = { capabilities = { offsetEncoding = "utf-8" }, cmd = { "clangd" } },
+
+				-- bash/sh
+				bashls = {},
 			},
 		},
 
