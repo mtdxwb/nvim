@@ -169,4 +169,12 @@ return {
 			vim.g.translator_default_engines = { "bing", "youdao" }
 		end,
 	},
+
+	-- gitsigns.nvim
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("plugins.configs.gitsigns")
+		end,
+	},
 }
