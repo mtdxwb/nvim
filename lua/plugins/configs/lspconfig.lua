@@ -74,8 +74,6 @@ local on_attach = function(client, bufnr)
 
 	-- 悬停文档
 	keymap.set("n", "<leader>h", "<cmd>Lspsaga hover_doc<CR>", opts)
-	-- 关闭悬浮窗口
-	keymap.set("n", "<Esc>", "<cmd>Lspsaga hover_close<CR>", opts)
 end
 
 -- blink
