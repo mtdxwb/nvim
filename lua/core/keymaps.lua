@@ -57,6 +57,10 @@ local nmappings = {
 	-- custom term
 	{ from = "<leader>g", to = "<cmd>lua _lazygit_toggle()<CR>", opts = { noremap = true, silent = true } },
 	{ from = "<leader>tf", to = "<cmd>lua _floating_term()<CR>", opts = { noremap = true, silent = true } },
+
+	-- vim-translator
+	{ from = "<leader>tt", to = "<cmd>Translate<CR>", opts = { noremap = true, silent = true } },
+	{ from = "<leader>tt", to = "<cmd>TranslateV<CR>", mode = mode_v, opts = { noremap = true, silent = true } },
 }
 
 for _, mapping in ipairs(nmappings) do
