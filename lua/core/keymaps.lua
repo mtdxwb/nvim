@@ -77,6 +77,9 @@ local nmappings = {
 	{ from = "<leader>;", to = dropbar_api.pick, opts = { desc = "Pick symbols in winbar" } },
 	{ from = "[;", to = dropbar_api.goto_context_start, opts = { desc = "Go to start of current context" } },
 	{ from = "];", to = dropbar_api.select_next_context, opts = { desc = "Select next context" } },
+
+  -- cellular-automaton.nvim
+  { from = "<leader>fml", to = "<cmd>CellularAutomaton make_it_rain<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do
