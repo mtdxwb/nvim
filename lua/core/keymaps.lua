@@ -61,6 +61,15 @@ local nmappings = {
 	-- vim-translator
 	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", opts = { noremap = true, silent = true } },
 	{ from = "<leader>tt", to = "<cmd>TranslateWV<CR>", mode = mode_v, opts = { noremap = true, silent = true } },
+
+	-- conform
+	{
+		from = "<leader>=",
+		to = function()
+			require("conform").format()
+		end,
+		opts = { noremap = true, silent = true },
+	},
 }
 
 for _, mapping in ipairs(nmappings) do
