@@ -19,4 +19,7 @@ require("lazy").setup({
 	require("plugins.ui"),
 	require("plugins.lsp"),
 	require("plugins.tools"),
+  require("plugins.yazi"),
+  require("plugins.telescope"),
+  require("plugins.noice"),
 })
