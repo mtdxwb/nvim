@@ -10,6 +10,8 @@ local mode_i = { "i" }
 
 -- telescope
 local builtin = require("telescope.builtin")
+-- dropbar
+local dropbar_api = require("dropbar.api")
 
 local nmappings = {
 	-- 功能性设置
@@ -70,6 +72,11 @@ local nmappings = {
 		end,
 		opts = { noremap = true, silent = true },
 	},
+
+	-- dropbar
+	{ from = "<leader>;", to = dropbar_api.pick, opts = { desc = "Pick symbols in winbar" } },
+	{ from = "[;", to = dropbar_api.goto_context_start, opts = { desc = "Go to start of current context" } },
+	{ from = "];", to = dropbar_api.select_next_context, opts = { desc = "Select next context" } },
 }
 
 for _, mapping in ipairs(nmappings) do
