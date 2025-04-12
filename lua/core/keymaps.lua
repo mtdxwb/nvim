@@ -62,7 +62,7 @@ local nmappings = {
 
 	-- vim-translator
 	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", opts = { noremap = true, silent = true } },
-	{ from = "<leader>tt", to = "<cmd>TranslateWV<CR>", mode = mode_v, opts = { noremap = true, silent = true } },
+	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", mode = mode_v, opts = { noremap = true, silent = true } },
 
 	-- conform
 	{
