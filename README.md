@@ -4,12 +4,12 @@
 
 <!-- markdown-toc GitLab -->
 
-* [如何使用](#如何使用)
+* [开始使用](#开始使用)
 * [目录结构](#目录结构)
 
 <!-- markdown-toc -->
 
-## 如何使用
+## 开始使用
 1. 将旧配置重命名(备份)
     ```plaintext
     mv ~/.config/nvim ~/.config/nvim.old
@@ -39,3 +39,7 @@
         │   └── ...(other files)
         └── ...(other files)
 ```
+
+## 插件列表
+-- yazi.nvim("lua/plugins/yazi.lua")
+-- catppuccin.nvim("lua/plugins/theme.lua")
