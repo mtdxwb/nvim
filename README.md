@@ -1,0 +1,2 @@
+# mtdxwb's nvim config
+
