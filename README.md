@@ -41,5 +41,5 @@
 ```
 
 ## 插件列表
--- yazi.nvim("lua/plugins/yazi.lua")
--- catppuccin.nvim("lua/plugins/theme.lua")
+* yazi.nvim("lua/plugins/yazi.lua")
+* catppuccin.nvim("lua/plugins/theme.lua")
