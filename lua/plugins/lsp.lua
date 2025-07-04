@@ -70,7 +70,7 @@ return {
 	-- blink.cmp
 	{
 		"saghen/blink.cmp",
-    lazy = false,
+		lazy = false,
 		-- optional: provides snippets for the snippet source
 		dependencies = { "rafamadriz/friendly-snippets", { "xzbdmw/colorful-menu.nvim", opts = {} } },
 
@@ -101,19 +101,21 @@ return {
 				keyword = { range = "full" }, -- 在一个单词中间时，自动检测整个单词
 				list = { selection = { preselect = false, auto_insert = false } },
 				menu = {
-          border = "rounded",
-          cloumns = { { "kind_icon" }, { "label", gap = 1 } },
-          components = {
-            label = {
-              text = function (ctx)
-                return require("colorful-menu").blink_components_text(ctx)
-              end,
-              highlight = function (ctx)
-                return require("colorful-menu").blink_components_highlight(ctx)
-              end,
-            },
-          },
-        },
+					border = "rounded",
+					draw = {
+						cloumns = { { "kind_icon" }, { "label", gap = 1 } },
+						components = {
+							label = {
+								text = function(ctx)
+									return require("colorful-menu").blink_components_text(ctx)
+								end,
+								highlight = function(ctx)
+									return require("colorful-menu").blink_components_highlight(ctx)
+								end,
+							},
+						},
+					},
+				},
 				documentation = {
 					auto_show = true,
 					auto_show_delay_ms = 500,
