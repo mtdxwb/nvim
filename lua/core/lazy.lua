@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	require("plugins.theme"),
 	require("plugins.ui"),
-	require("plugins.lsp"),
+	require("plugins.blink-cmp"),
 	require("plugins.tools"),
   require("plugins.yazi"),
   require("plugins.telescope"),

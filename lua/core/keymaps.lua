@@ -25,8 +25,6 @@ local nmappings = {
 	{ from = "<C-l>", to = "<C-w>l" },
 	{ from = "H", to = "<cmd>bprevious<CR>" },
 	{ from = "L", to = "<cmd>bnext<CR>" },
-	{ from = "J", to = "5j", mode = mode_nv },
-	{ from = "K", to = "5k", mode = mode_nv },
 
 	-- 移动单行或多行
 	{ from = "mj", to = ":m '>+1<CR>gv=gv", mode = mode_v },
