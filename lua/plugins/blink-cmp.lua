@@ -3,27 +3,27 @@ return {
 	"saghen/blink.cmp",
 	lazy = false,
 	-- optional: provides snippets for the snippet source
-	dependencies = { "rafamadriz/friendly-snippets", { "xzbdmw/colorful-menu.nvim", opts = {} } },
+	dependencies = { "rafamadriz/friendly-snippets" },
 
 	version = "*",
 
 	---@module 'blink.cmp'
-	---@type blink.cmp.Config
+	---@type blink.cmp.config
 	opts = {
 		keymap = {
 			preset = "none",
-			["<C-o>"] = { "show", "show_documentation", "hide_documentation" },
-			["<C-e>"] = { "hide", "fallback" },
-			["<CR>"] = { "accept", "fallback" },
+			["<c-o>"] = { "show", "show_documentation", "hide_documentation" },
+			["<c-e>"] = { "hide", "fallback" },
+			["<cr>"] = { "accept", "fallback" },
 
-			["<C-n>"] = { "snippet_forward", "fallback" },
-			["<C-p>"] = { "snippet_backward", "fallback" },
+			["<c-n>"] = { "snippet_forward", "fallback" },
+			["<c-p>"] = { "snippet_backward", "fallback" },
 
-			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
-			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+			["<s-tab>"] = { "select_prev", "snippet_backward", "fallback" },
+			["<tab>"] = { "select_next", "snippet_forward", "fallback" },
 
-			["<C-b>"] = { "scroll_documentation_up", "fallback" },
-			["<C-f>"] = { "scroll_documentation_down", "fallback" },
+			["<c-b>"] = { "scroll_documentation_up", "fallback" },
+			["<c-f>"] = { "scroll_documentation_down", "fallback" },
 
 			["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 		},
@@ -31,22 +31,7 @@ return {
 		completion = {
 			keyword = { range = "full" }, -- 在一个单词中间时，自动检测整个单词
 			list = { selection = { preselect = false, auto_insert = false } },
-			menu = {
-				border = "rounded",
-				draw = {
-					cloumns = { { "kind_icon" }, { "label", gap = 1 } },
-					components = {
-						label = {
-							text = function(ctx)
-								return require("colorful-menu").blink_components_text(ctx)
-							end,
-							highlight = function(ctx)
-								return require("colorful-menu").blink_components_highlight(ctx)
-							end,
-						},
-					},
-				},
-			},
+			menu = { border = "rounded" },
 			documentation = {
 				auto_show = true,
 				auto_show_delay_ms = 500,
