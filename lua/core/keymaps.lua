@@ -78,6 +78,9 @@ local nmappings = {
 
   -- cellular-automaton.nvim
   { from = "<leader>fml", to = "<cmd>CellularAutomaton make_it_rain<CR>" },
+
+  -- oil.nvim
+  { from = "-", to = "<cmd>Oil<cr>", opts = { desc = "Open parent directory" } },
 }
 
 for _, mapping in ipairs(nmappings) do
