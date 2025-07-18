@@ -67,24 +67,4 @@ return {
 
 	-- cellular-automaton.nvim (实现代码坍塌效果)
 	{ "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
-
-	-- snacks.nvim
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		---@type snacks.Config
-		opts = {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
-			animate = { enabled = true },
-			bigfile = { enabled = true },
-			dashboard = { enabled = true },
-			quickfile = { enabled = true },
-			scope = { enabled = true },
-			scroll = { enabled = true },
-			image = {},
-		},
-	},
 }
