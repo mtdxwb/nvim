@@ -8,8 +8,6 @@ local mode_nv = { "n", "v" }
 local mode_v = { "v" }
 local mode_i = { "i" }
 
--- telescope
-local builtin = require("telescope.builtin")
 -- dropbar
 local dropbar_api = require("dropbar.api")
 
@@ -30,29 +28,10 @@ local nmappings = {
 	{ from = "mj", to = ":m '>+1<CR>gv=gv", mode = mode_v },
 	{ from = "mk", to = ":m '<-2<CR>gv=gv", mode = mode_v },
 
-	-- telescope
-	{
-		from = "<leader>ff",
-		to = function()
-			builtin.find_files({ use_fzf = true })
-		end,
-		opts = { desc = "Telescope find files" },
-	},
-	{
-		from = "<leader>fg",
-		to = function()
-			builtin.live_grep({ use_fzf = true })
-		end,
-		opts = { desc = "Telescope live grep" },
-	},
-	{
-		from = "<leader>fb",
-		to = function()
-			builtin.buffers({ use_fzf = true })
-		end,
-		opts = { desc = "Telescope buffers" },
-	},
-	{ from = "<leader>fh", to = builtin.help_tags, opts = { desc = "Telescope help tags" } },
+  -- fzf-lua
+  { from = "<leader>ff", to = "<cmd>FzfLua files<CR>", opts = { desc = "FzfLua find files" } },
+  { from = "<leader>fb", to = "<cmd>FzfLua buffers<CR>", opts = { desc = "FzfLua find buffers" } },
+  { from = "<leader>lg", to = "<cmd>FzfLua live_grep<CR>", opts = { desc = "FzfLua live grep" } },
 
 	-- custom term
 	{ from = "<leader>g", to = "<cmd>lua _lazygit_toggle()<CR>", opts = { noremap = true, silent = true } },
