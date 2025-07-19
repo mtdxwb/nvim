@@ -11,7 +11,6 @@ return {
 			term_color = true,
 
 			integrations = {
-				telescope = true,
 				notify = true,
 				treesitter = true,
 				noice = true,
