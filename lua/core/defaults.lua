@@ -75,4 +75,4 @@ function _G.custom_foldtext()
 	table.insert(result, { "", "@comment.warning.gitcommit" })
 	return result
 end
-vim.opt.foldtext = "v:lua.custom_foldtext()"
+opt.foldtext = "v:lua.custom_foldtext()"
