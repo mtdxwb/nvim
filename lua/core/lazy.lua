@@ -22,4 +22,5 @@ require("lazy").setup({
   require("plugins.oil"),
   require("plugins.fzf-lua"),
   require("plugins.noice"),
+  require("plugins.debugger"),
 })
