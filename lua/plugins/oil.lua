@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	-- Optional dependencies
 	dependencies = {
-		{ "echasnovski/mini.icons", opts = {} },
+		{ "nvim-tree/nvim-web-devicons" },
     { "benomahony/oil-git.nvim", opts = {} },
     { "JezerM/oil-lsp-diagnostics.nvim", opts = {} },
 	},
