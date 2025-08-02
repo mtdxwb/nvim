@@ -2,9 +2,6 @@
 
 local get_hex = require("cokeline.hlgroups").get_hl_attr
 
-local green = vim.g.terminal_color_2
-local yellow = vim.g.terminal_color_3
-
 require("cokeline").setup({
 	default_hl = {
 		fg = function(buffer)
