@@ -187,12 +187,12 @@ ins_left({
 	end,
 })
 
-ins_left({
-	function()
-		return "Hello, 🐢 mtdxwb!!!"
-	end,
-	color = { fg = colors.green, gui = "bold" },
-})
+-- ins_left({
+-- 	function()
+-- 		return "Hello, 🐢 mtdxwb!!!"
+-- 	end,
+-- 	color = { fg = colors.green, gui = "bold" },
+-- })
 
 -- Add components to right sections
 ins_right({ "location" })
