@@ -1,7 +1,7 @@
 return {
 	-- blink.cmp
 	"saghen/blink.cmp",
-	lazy = false,
+	event = { "BufReadPost", "BufNewFile" },
 	-- optional: provides snippets for the snippet source
 	dependencies = { "rafamadriz/friendly-snippets" },
 
