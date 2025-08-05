@@ -39,7 +39,7 @@ opt.foldlevelstart = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldcolumn = "0"
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+opt.fillchars = "eob: ,fold: ,foldopen:^,foldsep: ,foldclose:>"
 
 local function fold_virt_text(result, start_text, lnum)
 	local text = ""
@@ -69,10 +69,10 @@ function _G.custom_foldtext()
 	local nline = vim.v.foldend - vim.v.foldstart
 	local result = {}
 	fold_virt_text(result, start_text, vim.v.foldstart - 1)
-	table.insert(result, { " ", nil })
-	table.insert(result, { "", "@comment.warning.gitcommit" })
-	table.insert(result, { "↙ " .. nline .. " lines", "@comment.warning" })
-	table.insert(result, { "", "@comment.warning.gitcommit" })
+  table.insert(result, { " ... ", "@comment" })
+	table.insert(result, { "| ", "@comment.warning.gitcommit" })
+	table.insert(result, { "↙ " .. nline .. " lines", "@comment.warning.gitcommit" })
+	table.insert(result, { " |", "@comment.warning.gitcommit" })
 	return result
 end
 opt.foldtext = "v:lua.custom_foldtext()"
