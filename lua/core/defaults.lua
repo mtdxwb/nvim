@@ -33,6 +33,15 @@ opt.updatetime = 300
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- 显示行尾空格
+opt.list = true
+opt.listchars = [[tab:\ ,trail:]]
+
+-- others
+opt.scrolloff = 8
+opt.tw = 0
+opt.indentexpr = " "
+
 -- 代码折叠
 opt.foldenable = true
 opt.foldlevelstart = 99
