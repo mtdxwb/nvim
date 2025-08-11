@@ -23,4 +23,5 @@ require("lazy").setup({
   require("plugins.fzf-lua"),
   require("plugins.noice"),
   require("plugins.debugger"),
+  require("plugins.mason"),
 })
