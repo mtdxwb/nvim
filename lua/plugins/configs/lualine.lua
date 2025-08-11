@@ -141,58 +141,58 @@ ins_left({
 	color = { fg = colors.magenta, gui = "bold" },
 })
 
--- ins_left({
--- 	function()
--- 		return ""
--- 	end,
--- })
---
--- ins_left({
--- 	-- Lsp server name .
--- 	function()
--- 		local msg = "No Active Lsp"
--- 		local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
--- 		local clients = vim.lsp.get_clients()
--- 		if next(clients) == nil then
--- 			return msg
--- 		end
--- 		for _, client in ipairs(clients) do
--- 			local filetypes = client.config.filetypes
--- 			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
--- 				return client.name
--- 			end
--- 		end
--- 		return msg
--- 	end,
--- 	icon = " LSP:",
--- 	color = { fg = "#ffffff", gui = "bold" },
--- })
---
--- ins_left({
--- 	"diagnostics",
--- 	sources = { "nvim_diagnostic" },
--- 	symbols = { error = " ", warn = " ", info = " " },
--- 	diagnostics_color = {
--- 		error = { fg = colors.red },
--- 		warn = { fg = colors.yellow },
--- 		info = { fg = colors.cyan },
--- 	},
--- })
---
--- -- Insert mid section. You can make any number of sections in neovim :)
--- -- for lualine it's any number greater then 2
--- ins_left({
--- 	function()
--- 		return "%="
--- 	end,
--- })
+ins_left({
+	function()
+		return ""
+	end,
+})
 
--- ins_left({
--- 	function()
--- 		return "Hello, 🐢 mtdxwb!!!"
--- 	end,
--- 	color = { fg = colors.green, gui = "bold" },
--- })
+ins_left({
+	-- Lsp server name .
+	function()
+		local msg = "No Active Lsp"
+		local buf_ft = vim.api.nvim_get_option_value("filetype", { buf = 0 })
+		local clients = vim.lsp.get_clients()
+		if next(clients) == nil then
+			return msg
+		end
+		for _, client in ipairs(clients) do
+			local filetypes = client.config.filetypes
+			if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+				return client.name
+			end
+		end
+		return msg
+	end,
+	icon = " LSP:",
+	color = { fg = "#ffffff", gui = "bold" },
+})
+
+ins_left({
+	"diagnostics",
+	sources = { "nvim_diagnostic" },
+	symbols = { error = " ", warn = " ", info = " " },
+	diagnostics_color = {
+		error = { fg = colors.red },
+		warn = { fg = colors.yellow },
+		info = { fg = colors.cyan },
+	},
+})
+
+-- Insert mid section. You can make any number of sections in neovim :)
+-- for lualine it's any number greater then 2
+ins_left({
+	function()
+		return "%="
+	end,
+})
+
+ins_left({
+	function()
+		return "Hello, 🐢 mtdxwb!!!"
+	end,
+	color = { fg = colors.green, gui = "bold" },
+})
 
 -- Add components to right sections
 ins_right({ "location" })
