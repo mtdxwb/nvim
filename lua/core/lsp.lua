@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- [diagnostics]
     vim.diagnostic.config {
       virtual_text = {
-        true,
+        false,
         prefix = '',
       },
       float = { severity_sort = true, border = "rounded" },
