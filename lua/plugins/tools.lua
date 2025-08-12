@@ -32,7 +32,7 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("hlchunk").setup({
-				chunk = { enable = true },
+				chunk = { enable = false },
 				indent = { enable = true },
 			})
 		end,
