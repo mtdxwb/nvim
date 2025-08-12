@@ -1,13 +1,13 @@
 return {
 	-- lualine
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-
-		config = function()
-			require("plugins.configs.lualine")
-		end,
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	--
+	-- 	config = function()
+	-- 		require("plugins.configs.lualine")
+	-- 	end,
+	-- },
 
 	-- dropbar
 	{
@@ -20,15 +20,15 @@ return {
 	},
 
 	-- cokeline
-	{
-		"willothy/nvim-cokeline",
-		dependencies = {
-			"nvim-lua/plenary.nvim", -- Required for v0.4.0+
-			"nvim-tree/nvim-web-devicons", -- If you want devicons
-			"stevearc/resession.nvim", -- Optional, for persistent history
-		},
-		config = function()
-			require("plugins.configs.cokeline")
-		end,
-	},
+	-- {
+	-- 	"willothy/nvim-cokeline",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim", -- Required for v0.4.0+
+	-- 		"nvim-tree/nvim-web-devicons", -- If you want devicons
+	-- 		"stevearc/resession.nvim", -- Optional, for persistent history
+	-- 	},
+	-- 	config = function()
+	-- 		require("plugins.configs.cokeline")
+	-- 	end,
+	-- },
 }
