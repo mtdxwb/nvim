@@ -19,9 +19,11 @@ require("lazy").setup({
 	require("plugins.ui"),
 	require("plugins.blink-cmp"),
 	require("plugins.tools"),
-  require("plugins.oil"),
-  require("plugins.fzf-lua"),
-  require("plugins.noice"),
-  require("plugins.debugger"),
-  require("plugins.mason"),
+	require("plugins.oil"),
+	require("plugins.fzf-lua"),
+	require("plugins.noice"),
+	require("plugins.debugger"),
+	require("plugins.mason"),
+
+	require("plugins.language_tools.rust_tools"),
 })

@@ -8,6 +8,8 @@ local mode_nv = { "n", "v" }
 local mode_v = { "v" }
 local mode_i = { "i" }
 
+local bufnr = vim.api.nvim_get_current_buf()
+
 -- dropbar
 local dropbar_api = require("dropbar.api")
 
@@ -82,7 +84,12 @@ local nmappings = {
     local input = vim.fn.input 'Condition for breakpoint:'
     dap.set_breakpoint(input)
   end, opts = { desc = "DAP: Conditional Breakpoint" } },
-  { from = "<leader>dD", to = dap.clear_breakpoints, opts = { desc = "DAP: Clear Breakpoints" } }
+  { from = "<leader>dD", to = dap.clear_breakpoints, opts = { desc = "DAP: Clear Breakpoints" } },
+
+	-- rustaceanvim
+	{ from = "K", to = "<Plug>RustHoverAction", opts = { silent = true, buffer = bufnr } },
+	{ from = "cp", to = "<cmd>Crun<CR>", opts = { desc = "Rust: Cargo run..." } },
+	{ from = "ln", to = "<cmd>RustLsp relatedDiagnostics<CR>", opts = { silent = true, buffer = bufnr } },
 }
 
 for _, mapping in ipairs(nmappings) do
