@@ -2,12 +2,13 @@ local opt = vim.opt
 
 -- 行号
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 
 -- 缩进
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.expandtab = true
+opt.softtabstop = 2
+opt.expandtab = false
 opt.autoindent = true
 
 -- 防止包裹
@@ -27,7 +28,11 @@ opt.smartcase = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 
-opt.updatetime = 300
+opt.updatetime = 100
+
+-- 分割窗口
+opt.splitbelow = true
+opt.splitright = true
 
 -- netrw
 vim.g.loaded_netrw = 1
@@ -35,7 +40,7 @@ vim.g.loaded_netrwPlugin = 1
 
 -- 显示行尾空格
 opt.list = true
-opt.listchars = [[tab:\ ,trail:]]
+opt.listchars = [[tab:| ,trail:▫]]
 
 -- others
 opt.scrolloff = 8
@@ -48,7 +53,7 @@ opt.foldlevelstart = 99
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldcolumn = "0"
-opt.fillchars = "eob: ,fold: ,foldopen:^,foldsep: ,foldclose:>"
+opt.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
 
 local function fold_virt_text(result, start_text, lnum)
 	local text = ""
@@ -78,7 +83,7 @@ function _G.custom_foldtext()
 	local nline = vim.v.foldend - vim.v.foldstart
 	local result = {}
 	fold_virt_text(result, start_text, vim.v.foldstart - 1)
-  table.insert(result, { " ... ", "@comment" })
+	table.insert(result, { " ... ", "@comment" })
 	table.insert(result, { "| ", "@comment.warning.gitcommit" })
 	table.insert(result, { "↙ " .. nline .. " lines", "@comment.warning.gitcommit" })
 	table.insert(result, { " |", "@comment.warning.gitcommit" })
