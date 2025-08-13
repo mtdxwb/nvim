@@ -2,31 +2,29 @@ local opt = vim.opt
 
 -- 行号
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 
 -- 缩进
 opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = false
+opt.shiftwidth = 0
+opt.expandtab = true
 opt.autoindent = true
 
 -- 防止包裹
 opt.wrap = false
 
--- 光标行
-opt.cursorline = true
-
 -- 启用鼠标
-opt.mouse:append("a")
+opt.mouse:append('a')
 
 -- 搜索
 opt.ignorecase = true
 opt.smartcase = true
 
 -- 外观
+opt.cursorline = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
+opt.colorcolumn = "100"
 
 opt.updatetime = 100
 
@@ -40,12 +38,13 @@ vim.g.loaded_netrwPlugin = 1
 
 -- 显示行尾空格
 opt.list = true
-opt.listchars = [[tab:| ,trail:▫]]
+opt.listchars = [[tab:│ ,trail:▫]]
 
 -- others
 opt.scrolloff = 8
 opt.tw = 0
 opt.indentexpr = " "
+opt.autoread = true
 
 -- 代码折叠
 opt.foldenable = true
