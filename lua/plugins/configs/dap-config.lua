@@ -9,6 +9,11 @@ dap.adapters.gdb = {
   args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
 }
 
+dap.adapters.codelldb = {
+  type = "executable",
+  command = "codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
+}
+
 -- NOTE: 不同语言调试任务
 dap.configurations.c = {
   {
@@ -45,8 +50,18 @@ dap.configurations.c = {
     cwd = '${workspaceFolder}'
   },
 }
+dap.configurations.rust = {
+  {
+    name = "Launch file(codelldb)",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+  },
+}
 
-dap.configurations.cpp = dap.configurations.c
-dap.configurations.rust = dap.configurations.c
-
+dap.configurations.cpp = dap.configurations.rust
 
