@@ -88,7 +88,6 @@ local nmappings = {
 
 	-- rustaceanvim
 	{ from = "K", to = "<Plug>RustHoverAction", opts = { silent = true, buffer = bufnr } },
-	{ from = "cp", to = "<cmd>Crun<CR>", opts = { desc = "Rust: Cargo run..." } },
 }
 
 for _, mapping in ipairs(nmappings) do
