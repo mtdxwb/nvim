@@ -18,7 +18,7 @@ local dap = require("dap")
 
 local nmappings = {
 	-- 功能性设置
-	{ from = ";", to = ":" },
+	{ from = ";", to = ":", opts = { silent = false }},
 	{ from = "<leader>nh", to = ":nohl<CR>" }, -- 取消高亮
 
 	-- 移动
