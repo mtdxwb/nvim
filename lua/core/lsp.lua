@@ -35,33 +35,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "<leader>ld", function()
 			vim.diagnostic.open_float({ source = true })
 		end, { buffer = event.buf, desc = "Lsp: Show Diagnostic" })
-		vim.keymap.set(
-			"n",
-			"<leader>td",
-			(function()
-				local diag_status = 1
-				return function()
-					if diag_status == 1 then
-						diag_status = 0
-						vim.diagnostic.config({
-							underline = false,
-							virtual_text = false,
-							signs = false,
-							update_in_insert = false,
-						})
-					else
-						diag_status = 1
-						vim.diagnostic.config({
-							underline = true,
-							virtual_text = true,
-							signs = true,
-							update_in_insert = true,
-						})
-					end
-				end
-			end)(),
-			{ buffer = event.buf, desc = "Lsp: Toggle Diagnostics" }
-		)
 
 		-- folding
 		if client and client:supports_method("textDocument/foldingRange") then
