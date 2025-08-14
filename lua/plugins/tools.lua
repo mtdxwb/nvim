@@ -2,7 +2,7 @@ return {
 	-- treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "main",
+		branch = "master",
 		lazy = false,
 		config = function()
 			require("plugins.configs.treesitter")
@@ -60,10 +60,8 @@ return {
 		config = function()
 			vim.g.translator_window_type = "popup"
 			vim.g.translator_default_engines = { "bing", "youdao" }
+			vim.keymap.set({ "n", "v" }, "<leader>tt", "<cmd>TranslateW<CR>", { noremap = true, silent = true })
 		end,
-		keys = {
-			{ "<leader>tt", { "n", "v" }, "<cmd>TranslateW<CR>", noremap = true, silent = true },
-		},
 	},
 
 	-- gitsigns.nvim
