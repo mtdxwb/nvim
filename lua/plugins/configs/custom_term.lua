@@ -27,5 +27,5 @@ function _floating_term()
 	float_term:toggle()
 end
 
-vim.keymap.set("n", "<leader>g", "<cmd>lua _laygit_toggle()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>tf", "<cmd>lua _floating_term()<CR>", { noremap = true, silent = true })

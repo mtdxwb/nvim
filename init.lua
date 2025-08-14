@@ -10,3 +10,6 @@ require("core.defaults")
 require("core.keymaps")
 require("core.lazy")
 require("core.lsp")
+
+-- term
+require("plugins.configs.custom_term")
