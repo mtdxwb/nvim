@@ -7,11 +7,14 @@ return {
 	config = function()
 		require("catppuccin").setup({
 			transparent_background = true, -- disables setting the background color.
-			show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+			float = {
+				transparent = true,
+				solid = true,
+			},
 			term_color = true,
 
 			integrations = {
-				notify = true,
+				notify = false,
 				treesitter = true,
 				noice = true,
 
