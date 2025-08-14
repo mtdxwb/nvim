@@ -42,6 +42,7 @@ return {
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
+    event = "VeryLazy",
 		opts = {},
 	},
 
@@ -51,6 +52,7 @@ return {
 	-- vim-translate
 	{
 		"voldikss/vim-translator",
+    event = "VeryLazy",
 		config = function()
 			vim.g.translator_window_type = "popup"
 			vim.g.translator_default_engines = { "bing", "youdao" }
@@ -60,6 +62,7 @@ return {
 	-- gitsigns.nvim
 	{
 		"lewis6991/gitsigns.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.configs.gitsigns")
 		end,
