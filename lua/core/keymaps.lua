@@ -43,8 +43,7 @@ local nmappings = {
 	{ from = "<leader>tf", to = "<cmd>lua _floating_term()<CR>", opts = { noremap = true, silent = true } },
 
 	-- vim-translator
-	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", opts = { noremap = true, silent = true } },
-	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", mode = mode_v, opts = { noremap = true, silent = true } },
+	{ from = "<leader>tt", to = "<cmd>TranslateW<CR>", mode = mode_nv, opts = { noremap = true, silent = true } },
 
 	-- conform
 	{
