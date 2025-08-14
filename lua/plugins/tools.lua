@@ -61,7 +61,4 @@ return {
 			require("plugins.configs.gitsigns")
 		end,
 	},
-
-	-- cellular-automaton.nvim (实现代码坍塌效果)
-	{ "Eandrju/cellular-automaton.nvim", event = "VeryLazy" },
 }
