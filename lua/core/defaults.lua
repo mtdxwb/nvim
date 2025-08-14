@@ -14,7 +14,7 @@ opt.autoindent = true
 opt.wrap = false
 
 -- 启用鼠标
-opt.mouse:append('a')
+opt.mouse:append("a")
 
 -- 搜索
 opt.ignorecase = true

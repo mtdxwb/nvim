@@ -10,9 +10,7 @@ return {
 	-- comment
 	{
 		"numToStr/Comment.nvim",
-		opts = {
-			-- add any options here
-		},
+		opts = {},
 	},
 
 	-- RRethy/vim-illuminate
@@ -42,7 +40,7 @@ return {
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		opts = {},
 	},
 
@@ -52,7 +50,7 @@ return {
 	-- vim-translate
 	{
 		"voldikss/vim-translator",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
 			vim.g.translator_window_type = "popup"
 			vim.g.translator_default_engines = { "bing", "youdao" }
