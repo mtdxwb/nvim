@@ -9,12 +9,6 @@ return {
 		end,
 	},
 
-	-- comment
-	{
-		"numToStr/Comment.nvim",
-		opts = {},
-	},
-
 	-- RRethy/vim-illuminate
 	{ "RRethy/vim-illuminate" },
 
