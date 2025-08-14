@@ -4,6 +4,8 @@ require("nvim-treesitter.configs").setup({
 		"c",
 		"cpp",
 		"rust",
+		"toml",
+		"python",
 		"lua",
 		"vim",
 		"vimdoc",
