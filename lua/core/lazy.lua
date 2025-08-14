@@ -26,7 +26,7 @@ require("lazy").setup({
 	require("plugins.ui"),
 	require("plugins.blink-cmp"),
 	require("plugins.tools"),
-	require("plugins.oil"),
+  require("plugins.yazi"),
 	require("plugins.fzf-lua"),
 	require("plugins.noice"),
 	require("plugins.debugger"),
