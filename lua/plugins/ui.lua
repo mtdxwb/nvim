@@ -17,6 +17,11 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
+		keys = {
+			{ "<leader>;", require("dropbar.api").pick, desc = "Pick symbols in winbar" },
+			{ "[;", require("dropbar.api").goto_context_start, desc = "Go to start of current context" },
+			{ "];", require("dropbar.api").select_next_context, desc = "Select next context" },
+		},
 	},
 
 	-- cokeline

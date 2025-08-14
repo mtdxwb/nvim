@@ -15,6 +15,16 @@ return {
 	-- conform.nvim
 	{
 		"stevearc/conform.nvim",
+		keys = {
+			{
+				"<leader>=",
+				function()
+					require("conform").format()
+				end,
+				noremap = true,
+				silent = true,
+			},
+		},
 		config = function()
 			require("plugins.configs.conform")
 		end,
@@ -51,6 +61,9 @@ return {
 			vim.g.translator_window_type = "popup"
 			vim.g.translator_default_engines = { "bing", "youdao" }
 		end,
+		keys = {
+			{ "<leader>tt", { "n", "v" }, "<cmd>TranslateW<CR>", noremap = true, silent = true },
+		},
 	},
 
 	-- gitsigns.nvim

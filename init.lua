@@ -7,6 +7,6 @@
 -- Author: @mtdxwb (TheXWB)
 
 require("core.defaults")
-require("core.lazy")
 require("core.keymaps")
+require("core.lazy")
 require("core.lsp")
