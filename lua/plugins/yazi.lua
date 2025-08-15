@@ -8,7 +8,7 @@ return {
 	keys = {
 		{
 			"<leader>-",
-			"<cmd>Yazi toggle<CR>",
+			"<cmd>Yazi<CR>",
 			desc = "Open yazi at the current file",
 			silent = true,
 		},
