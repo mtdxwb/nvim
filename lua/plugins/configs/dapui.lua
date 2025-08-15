@@ -46,6 +46,7 @@ vim.fn.sign_define("DapBreakpointCondition", {
 	numhl = "DapBreakpointCondition",
 })
 vim.fn.sign_define("DapStopped", { text = "󰐊", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" })
+vim.fn.sign_define("DapLogPoint", { text = "◆", texthl = "DapLogPoint", linehl = "", numhl = "" })
 
 local nmappings = {
 	{ from = "<leader>du", to = dapui.toggle, opts = { desc = "DAP: Toggle UI." } },
