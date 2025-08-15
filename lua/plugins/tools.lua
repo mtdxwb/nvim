@@ -48,6 +48,9 @@ return {
 		version = "*",
 		event = "VeryLazy",
 		opts = {},
+		config = function()
+			require("plugins.configs.custom_term")
+		end,
 	},
 
 	-- nvim-auto-pairs
