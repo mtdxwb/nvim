@@ -4,5 +4,6 @@ require("conform").setup({
 		lua = { "stylua" },
 		cpp = { "clang-format" },
 		rust = { "rustfmt" },
+		python = { "black" },
 	},
 })
