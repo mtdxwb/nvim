@@ -1,78 +1,78 @@
 return {
-	-- treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
-		lazy = false,
-		config = function()
-			require("plugins.configs.treesitter")
-		end,
-	},
+  -- treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "master",
+    lazy = false,
+    config = function()
+      require("plugins.configs.treesitter")
+    end,
+  },
 
-	-- RRethy/vim-illuminate
-	{ "RRethy/vim-illuminate" },
+  -- RRethy/vim-illuminate
+  { "RRethy/vim-illuminate" },
 
-	-- conform.nvim
-	{
-		"stevearc/conform.nvim",
-		keys = {
-			{
-				"<leader>=",
-				function()
-					require("conform").format()
-				end,
-				noremap = true,
-				silent = true,
-			},
-		},
-		config = function()
-			require("plugins.configs.conform")
-		end,
-	},
+  -- conform.nvim
+  {
+    "stevearc/conform.nvim",
+    keys = {
+      {
+        "<leader>=",
+        function()
+          require("conform").format()
+        end,
+        noremap = true,
+        silent = true,
+      },
+    },
+    config = function()
+      require("plugins.configs.conform")
+    end,
+  },
 
-	-- hlchunk
-	{
-		"shellRaining/hlchunk.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("hlchunk").setup({
-				chunk = { enable = true },
-				indent = { enable = true },
-			})
-		end,
-	},
+  -- hlchunk
+  {
+    "shellRaining/hlchunk.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("hlchunk").setup({
+        chunk = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  },
 
-	-- toggleterm.nvim
-	{
-		"akinsho/toggleterm.nvim",
-		version = "*",
-		event = "VeryLazy",
-		opts = {},
-		config = function()
-			require("plugins.configs.custom_term")
-		end,
-	},
+  -- toggleterm.nvim
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    event = "VeryLazy",
+    opts = {},
+    config = function()
+      require("plugins.configs.custom_term")
+    end,
+  },
 
-	-- nvim-auto-pairs
-	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+  -- nvim-auto-pairs
+  { "windwp/nvim-autopairs", event = "InsertEnter", config = true },
 
-	-- vim-translate
-	{
-		"voldikss/vim-translator",
-		event = "VeryLazy",
-		config = function()
-			vim.g.translator_window_type = "popup"
-			vim.g.translator_default_engines = { "bing", "youdao" }
-			vim.keymap.set({ "n", "v" }, "<leader>tt", "<cmd>TranslateW<CR>", { noremap = true, silent = true })
-		end,
-	},
+  -- vim-translate
+  {
+    "voldikss/vim-translator",
+    event = "VeryLazy",
+    config = function()
+      vim.g.translator_window_type = "popup"
+      vim.g.translator_default_engines = { "bing", "youdao" }
+      vim.keymap.set({ "n", "v" }, "<leader>tt", "<cmd>TranslateW<CR>", { noremap = true, silent = true })
+    end,
+  },
 
-	-- gitsigns.nvim
-	{
-		"lewis6991/gitsigns.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.configs.gitsigns")
-		end,
-	},
+  -- gitsigns.nvim
+  {
+    "lewis6991/gitsigns.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("plugins.configs.gitsigns")
+    end,
+  },
 }

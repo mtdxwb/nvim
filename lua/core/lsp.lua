@@ -6,58 +6,58 @@ vim.lsp.enable("pylsp")
 
 -- other config
 vim.api.nvim_create_autocmd("LspAttach", {
-	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
-	callback = function(event)
-		-- obtain lsp client
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
-		-- basic keymaps
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = event.buf, desc = "Lsp: Goto Definition" })
-		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "Lsp: Goto Declaration" })
+  group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
+  callback = function(event)
+    -- obtain lsp client
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    -- basic keymaps
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = event.buf, desc = "Lsp: Goto Definition" })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "Lsp: Goto Declaration" })
 
-		-- [diagnostics]
-		vim.diagnostic.config({
-			virtual_text = {
-				true,
-				prefix = "󰶻",
-			},
-			float = { severity_sort = true, border = "rounded" },
-			severity_sort = true,
+    -- [diagnostics]
+    vim.diagnostic.config({
+      virtual_text = {
+        true,
+        prefix = "󰶻",
+      },
+      float = { severity_sort = true, border = "rounded" },
+      severity_sort = true,
       update_in_insert = false,
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = "",
-					[vim.diagnostic.severity.WARN] = "",
-					[vim.diagnostic.severity.HINT] = "",
-					[vim.diagnostic.severity.INFO] = "",
-				},
-			},
-		})
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.HINT] = "",
+          [vim.diagnostic.severity.INFO] = "",
+        },
+      },
+    })
 
-		-- show diagnostics float window
-		vim.keymap.set("n", "<leader>ld", function()
-			vim.diagnostic.open_float({ source = true })
-		end, { buffer = event.buf, desc = "Lsp: Show Diagnostic" })
+    -- show diagnostics float window
+    vim.keymap.set("n", "<leader>ld", function()
+      vim.diagnostic.open_float({ source = true })
+    end, { buffer = event.buf, desc = "Lsp: Show Diagnostic" })
 
-		-- folding
-		if client and client:supports_method("textDocument/foldingRange") then
-			local win = vim.api.nvim_get_current_win()
-			vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
-		end
+    -- folding
+    if client and client:supports_method("textDocument/foldingRange") then
+      local win = vim.api.nvim_get_current_win()
+      vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+    end
 
-		-- inlay hint
-		if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-			vim.keymap.set("n", "<leader>th", function()
-				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-			end, { buffer = event.buf, desc = "Lsp: Toggle Inlay Hints" })
-		end
+    -- inlay hint
+    if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+      vim.keymap.set("n", "<leader>th", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+      end, { buffer = event.buf, desc = "Lsp: Toggle Inlay Hints" })
+    end
 
-		vim.api.nvim_create_autocmd("LspDetach", {
-			group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
-			callback = function(event2)
-				vim.lsp.buf.clear_references()
-				vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
-				-- vim.cmd 'setl foldexpr <'
-			end,
-		})
-	end,
+    vim.api.nvim_create_autocmd("LspDetach", {
+      group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
+      callback = function(event2)
+        vim.lsp.buf.clear_references()
+        vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
+        -- vim.cmd 'setl foldexpr <'
+      end,
+    })
+  end,
 })
